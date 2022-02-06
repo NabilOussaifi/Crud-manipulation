@@ -1,0 +1,8 @@
+#showcase{
+    background: #252a34 url(src/assets/ecommerce.png) no-repeat center center/cover ;
+    height: 100vh;
+    color: #fff;
+}
+.label{
+    color: #252a34;
+}

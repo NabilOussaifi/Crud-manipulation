@@ -1,0 +1,64 @@
+<div class="row my-sm-10" id="showcase">
+    <div class="col-md-6 mx-auto label ">
+        <form #f="ngForm">
+            <div class="form-group">
+                <label for="id"> ID </label>
+                <input type="number" id="id" name="id" ngModel #i="ngModel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="title"> Title </label>
+                <input type="text" id="title" name="title" ngModel #t="ngModel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="price"> Price </label>
+                <input type="number" id="price" name="price" ngModel #p="ngModel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="quantiy"> Quantity </label>
+                <input type="number" id="quantity" name="quantity" ngModel #q="ngModel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="like"> Like </label>
+                <input type="number" id="like" name="like" ngModel #l="ngModel" class="form-control">
+            </div> <br>
+            <button class="btn btn-success btn-sm" (click)="addP(f.value)">
+                <i class="fa fa-plus"> Ajout</i>
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3 mx-auto">
+        <h1> List de Produits</h1>
+    </div>
+    <div class="col-md-6 mx-auto">
+        <table class="table">
+         <thead>
+             <tr>
+                 <th>ID</th>
+                 <th>Title</th>
+                 <th>Price</th>
+                 <th>Quantity</th>
+                 <th>Like</th>
+                 <th>Actions</th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr *ngFor="let p of listProduct">
+             <td>{{p.id}}</td>
+             <td>{{p.title}}</td>
+             <td>{{p.price}}</td>
+             <td>{{p.quantity}}</td>
+             <td>{{p.like}}</td>
+             <td>
+                 <button type="button" class="btn btn-warning btn-sm"> <i class="fas fa-sync"> Update</i></button> &nbsp;
+                 <button type="button" class="btn btn-danger btn-sm" (click)="deleteP(p.id)" ><i class="far fa-trash-alt"> Delete</i></button>
+            </td>
+             </tr>
+         </tbody>
+        </table>
+    </div>
+
+
+</div>
